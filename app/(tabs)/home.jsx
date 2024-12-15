@@ -3,6 +3,7 @@ import React from 'react'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import { images } from '../../constants'
 import SearchInput from '../../components/SearchInput'
+import Trending from '../../components/Trending'
 
 const Home = () => {
   return (
@@ -38,8 +39,13 @@ const Home = () => {
               <Text className="text-lg font-pregular text-gray-100 mb-3">
                 Latest Videos
               </Text>
+
+              <Trending posts={[{id:1}, {id:2}, {id:3}] ?? []}/>
             </View>
           </View>
+        )}
+        ListEmptyComponent={() => (
+          <Text className="text-white">Empty</Text>
         )}
       />
     </SafeAreaView>
