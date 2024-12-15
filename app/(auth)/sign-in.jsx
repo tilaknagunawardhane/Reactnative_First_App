@@ -6,8 +6,10 @@ import FormField from "../../components/FormField";
 import CustomButton from "../../components/CustomButton";
 import { Link, router } from "expo-router";
 import { signIn } from "../../lib/appwrite";
+import { useNavigation } from '@react-navigation/native';
 
 const SignIn = () => {
+  const navigation = useNavigation();
   const [form, setForm] = useState({
     email: "",
     password: "",
@@ -17,6 +19,7 @@ const SignIn = () => {
 
   const submit = async () => {
     if(!form.email  || !form.password){
+      // router.replace('/home')     //for easy login
       Alert.alert("Error", "Please fill all the fields");
     }
     setIsSubmitting(true);
@@ -65,7 +68,7 @@ const SignIn = () => {
 
           <CustomButton 
             title="Sign In"
-            handlePress={submit}
+            // handlePress={submit}     //for easy login
             containerStyles="mt-7"
             isLoading={isSubmitting}
           />
@@ -76,7 +79,7 @@ const SignIn = () => {
             </Text>
 
             <Link
-              href="/sign-up"
+              href="/home"
               className="text-lg font-psemibold text-secondary"
             >
               Sign Up
