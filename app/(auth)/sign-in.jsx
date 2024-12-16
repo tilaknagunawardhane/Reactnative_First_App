@@ -68,7 +68,7 @@ const SignIn = () => {
 
           <CustomButton 
             title="Sign In"
-            // handlePress={submit}     //for easy login
+            handlePress={submit}     //for easy login
             containerStyles="mt-7"
             isLoading={isSubmitting}
           />
