@@ -16,6 +16,7 @@
     "expo-linking": "~7.0.3",
     "expo-router": "~4.0.11",
     "expo-status-bar": "~2.0.0",
+    "expo-video": "~2.0.2",
     "my-new-project": "file:",
     "nativewind": "^4.1.23",
     "react": "18.3.1",
