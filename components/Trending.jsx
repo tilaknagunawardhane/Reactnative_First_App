@@ -12,6 +12,7 @@ import { icons } from "../constants";
 // import { ResizeMode } from "expo-av";
 // import { Video, ResizeMode } from 'expo-video';
 import { Video } from "expo-video";
+// import { ResizeMode } from "expo-av";
 
 const zoomIn = {
   0: {
@@ -43,7 +44,14 @@ const TrendingItem = ({ activeItem, item }) => {
         <Video
         source={{ uri: item.video }}
         className="w-52 h-72 rounded-[33px] mt-3 bg-white/10"
-        resizeMode="contain"
+        // style={{
+        //   width: 200,
+        //   height: 300,
+        //   borderRadius: 20,
+        //   marginTop: 10,
+        //   backgroundColor: 'rgba(255, 255, 255, 0.1)',
+        // }}
+        resizeMode="contain" 
         useNativeControls
         shouldPlay
         onPlaybackStatusUpdate={(status) => {
@@ -51,6 +59,7 @@ const TrendingItem = ({ activeItem, item }) => {
               setPlay(false);
             }
           }}
+          onError={(err) => console.error("Video Playback Error:", err)}
         />
       ) : (
 
