@@ -11,7 +11,7 @@ import * as Animatable from "react-native-animatable";
 import { icons } from "../constants";
 // import { ResizeMode } from "expo-av";
 // import { Video, ResizeMode } from 'expo-video';
-import { Video } from "expo-video";
+import { Video, VideoPlayer, VideoView } from "expo-video";
 // import { ResizeMode } from "expo-av";
 
 const zoomIn = {
@@ -59,7 +59,7 @@ const TrendingItem = ({ activeItem, item }) => {
               setPlay(false);
             }
           }}
-          onError={(err) => console.error("Video Playback Error:", err)}
+          // onError={(err) => console.error("Video Playback Error:", err)}
         />
       ) : (
 
