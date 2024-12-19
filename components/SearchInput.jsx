@@ -1,21 +1,14 @@
 import { View, Text, TextInput, TouchableOpacity, Image } from "react-native";
 import React, { useState } from "react";
 import { icons } from "../constants";
+import {usePathname} from "expo-router"
 
-const SearchInput = ({
-  title,
-  value,
-  placeholder,
-  handleChangeText,
-  otherStyles,
-  ...props
-}) => {
+const SearchInput = () => {
   const [isFocused, setIsFocused] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
-
+  const pathname = usePathname();
+  const [query, setQuery] = useState(""); 
   return (
-    
-
       <View
         className={`w-full h-16 px-4 bg-black-100 rounded-2xl border-2 flex flex-row items-center space-x-4 ${
           isFocused ? "border-secondary" : "border-gray-800"
@@ -23,14 +16,10 @@ const SearchInput = ({
       >
         <TextInput
           className="text-base mt-0.5 text-white flex-1 font-pregular"
-          value={value}
+          value={query}
           placeholder="Search for a video topic"
           placeholderTextColor="#7B7B8B"
-          onChangeText={handleChangeText}
-          secureTextEntry={title === "Password" && !showPassword}
-          onFocus={() => setIsFocused(true)} // Handle focus
-          onBlur={() => setIsFocused(false)} // Handle blur
-          {...props}
+          onChangeText={(e) => setQuery(e)}
         />
 
         <TouchableOpacity>
