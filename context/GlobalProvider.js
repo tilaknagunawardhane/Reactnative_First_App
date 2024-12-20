@@ -16,6 +16,7 @@ const GlobalProvider = ({ children }) => {
         if (res) {
           setIsLogged(true);
           setUser(res);
+          // console.log(user.$id);
         } else {
           setIsLogged(false);
           setUser(null);
@@ -39,6 +40,7 @@ const GlobalProvider = ({ children }) => {
         loading,
       }}
     >
+      
       {children}
     </GlobalContext.Provider>
   );
